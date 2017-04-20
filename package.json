@@ -1,0 +1,54 @@
+{
+  "name": "glamor-helper",
+  "version": "0.0.1",
+  "description": "glamor helper",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "clean": "rm -r lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slivcode/glamor-helper.git"
+  },
+  "keywords": [
+    "css",
+    "glamor"
+  ],
+  "author": "sliv <sliv.mbp@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slivcode/glamor-helper/issues"
+  },
+  "homepage": "https://github.com/slivcode/glamor-helper#readme",
+  "devDependencies": {
+    "@types/enzyme": "^2.7.9",
+    "@types/react-addons-test-utils": "^0.14.18",
+    "@types/jest": "^19.2.2",
+    "glamor": "next",
+    "jest": "^19.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "ts-jest": "^19.0.10",
+    "typescript": "^2.2.2",
+    "enzyme": "^2.8.2",
+    "react-addons-test-utils": "^15.5.1"
+  },
+  "peerDependencies": {
+    "glamor": "*",
+    "react": "*"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

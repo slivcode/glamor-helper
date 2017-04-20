@@ -1,6 +1,6 @@
 import { css } from 'glamor';
 import { createElement, CSSProperties, SFC } from 'react';
-import { partitionObj } from '../../../cn-style-component/src/util/partition-obj';
+import { partitionObj } from './util/partition-obj';
 export type T_GlamorComponent = <P>(a: {
 	tag?: string | any,
 	ep?: string[],

@@ -1,8 +1,9 @@
 import { GlamorComponent } from '../glamor-component';
 import * as React from 'react';
 import { StatefulProp } from '../glamor-stateful-prop';
-import { renderToStaticMarkup } from 'react-dom/server';
+
 import { mount, shallow } from 'enzyme';
+import { createElement } from 'react';
 test('glamor component test', () => {
 	let El = GlamorComponent<{ isActive }>({
 		ep: ['isActive'],
@@ -23,7 +24,7 @@ test('glamor component test', () => {
 	let R = (f) => f();
 	R(() => {
 		let f = jest.fn();
-		let $ = mount(<El isActive={true} innerRef={f}/>);
+		let $ = mount(createElement(El, { isActive: true, innerRef: f }));
 		expect($.hasClass('is-active')).toBeTruthy();
 		let $div = $.render().find('div');
 		expect($div.attr('class').match(/css-/)).toBeTruthy();
@@ -31,7 +32,7 @@ test('glamor component test', () => {
 		expect(f).toBeCalled();
 	});
 	R(() => {
-		let $ = shallow(<El isActive={false}/>);
+		let $ = shallow(createElement(El, { isActive: false }));
 		expect($.hasClass('is-active')).toBeFalsy();
 	});
 });

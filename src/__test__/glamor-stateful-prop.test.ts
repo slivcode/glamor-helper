@@ -1,5 +1,7 @@
 import { StatefulProp } from '../glamor-stateful-prop';
-import forEach = require('ramda/src/forEach');
+
+let forEach = f => a => Array.prototype.forEach.call(a, f);
+
 test('glamor stateful prop test', () => {
 	let MQ_TV = '@media(min-width: 1920px)';
 	let t = StatefulProp('color', 'green',
