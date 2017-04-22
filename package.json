@@ -2,43 +2,45 @@
   "name": "glamor-helper",
   "version": "0.0.1",
   "description": "glamor helper",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "clean": "rm -r lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slivcode/glamor-helper.git"
-  },
   "keywords": [
     "css",
     "glamor"
   ],
-  "author": "sliv <sliv.mbp@gmail.com>",
-  "license": "MIT",
+  "homepage": "https://github.com/slivcode/glamor-helper#readme",
   "bugs": {
     "url": "https://github.com/slivcode/glamor-helper/issues"
   },
-  "homepage": "https://github.com/slivcode/glamor-helper#readme",
+  "license": "MIT",
+  "author": "sliv <sliv.mbp@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slivcode/glamor-helper.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -r lib",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "styled-tag-component": "^0.0.1"
+  },
   "devDependencies": {
     "@types/enzyme": "^2.7.9",
-    "@types/react-addons-test-utils": "^0.14.18",
     "@types/jest": "^19.2.2",
+    "@types/react-addons-test-utils": "^0.14.18",
+    "enzyme": "^2.8.2",
     "glamor": "next",
     "jest": "^19.0.2",
     "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "ts-jest": "^19.0.10",
-    "typescript": "^2.2.2",
-    "enzyme": "^2.8.2",
-    "react-addons-test-utils": "^15.5.1"
+    "typescript": "^2.2.2"
   },
   "peerDependencies": {
     "glamor": "*",
     "react": "*"
-  },
-  "dependencies": {
   },
   "jest": {
     "transform": {

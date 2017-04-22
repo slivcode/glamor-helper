@@ -1,5 +1,5 @@
 .*
 *.json
 *.lock
-**/__test__/**
+src/main/__test__/**
 src/

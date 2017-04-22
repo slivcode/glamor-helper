@@ -1,9 +1,7 @@
-import { GlamorComponent } from '../glamor-component';
-import * as React from 'react';
-import { StatefulProp } from '../glamor-stateful-prop';
-
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import { createElement } from 'react';
+import { GlamorComponent } from '../glamor-component';
 test('glamor component test', () => {
 	let El = GlamorComponent<{ isActive }>({
 		ep: ['isActive'],
@@ -18,7 +16,10 @@ test('glamor component test', () => {
 				},
 			},
 		],
-		cn: ({ isActive }) => [[isActive, 'is-active']],
+		cn: ({ isActive }) => [
+			[isActive, 'is-active'],
+			'extra-cn',
+		],
 		style: ({ isActive }) => ({ color: isActive ? 'blue' : 'red' }),
 	});
 	let R = (f) => f();
@@ -34,5 +35,6 @@ test('glamor component test', () => {
 	R(() => {
 		let $ = shallow(createElement(El, { isActive: false }));
 		expect($.hasClass('is-active')).toBeFalsy();
+		expect($.hasClass('extra-cn')).toBeTruthy();
 	});
 });
